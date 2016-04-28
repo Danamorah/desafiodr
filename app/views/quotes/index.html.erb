@@ -15,13 +15,14 @@
       <tr>
         <td><%= quote.content %></td>
         <td><%= link_to 'Show', quote %></td>
-        <td><%= link_to 'Edit', edit_quote_path(quote) %></td>
-        <td><%= link_to 'Destroy', quote, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Edit', edit_quote_path(quote) if can? :update, Quote %></td>
+        <td><%= link_to 'Destroy', quote, method: :delete, data: { confirm: 'Are you sure?' } if can? :destroy, Quote %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
-
+<% if can? :create, Quote %>
 <%= link_to 'New Quote', new_quote_path %>
+<% end %>
