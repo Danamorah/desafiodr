@@ -11,13 +11,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160429004719) do
+ActiveRecord::Schema.define(version: 20160502230120) do
 
   create_table "quotes", force: :cascade do |t|
     t.text     "content"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.text     "author"
+    t.integer  "tag_id"
+  end
+
+  add_index "quotes", ["tag_id"], name: "index_quotes_on_tag_id"
+
+  create_table "tags", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|

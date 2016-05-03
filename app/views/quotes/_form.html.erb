@@ -15,6 +15,19 @@
     <%= f.label :content %><br>
     <%= f.text_area :content %>
   </div>
+  <div class="field">
+    <%= f.label :author %><br>
+    <%= f.text_area :author %>
+  </div>
+    <div class="field">
+    <%= f.label :tag_name %><br>
+    <%#= collection_check_boxes :quote, :tag_id, Tag.all, :id, :name %>
+    <%#= radio_button :tag, :tag_name, :tag_id %>
+    <%#= radio_button :tag, :tag_name, :tag_id %>
+    <%= collection_radio_buttons :quote, :tag_id, Tag.all.map { |tag| [tag.id, tag.name]}, :first, :last %>
+
+    <%#= radio_button :modelname, :attribute, :tag_value, options %>
+  </div>
   <div class="actions">
     <%= f.submit %>
   </div>

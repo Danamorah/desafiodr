@@ -6,6 +6,8 @@
   <thead>
     <tr>
       <th>Content</th>
+      <th>Author</th>
+      <th>Tag</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -14,6 +16,8 @@
     <% @quotes.each do |quote| %>
       <tr>
         <td><%= quote.content %></td>
+        <td><%= quote.author %></td>
+        <td><%= quote.tag.name if quote.tag %></td>
         <td><%= link_to 'Show', quote %></td>
         <td><%= link_to 'Edit', edit_quote_path(quote) if can? :update, Quote %></td>
         <td><%= link_to 'Destroy', quote, method: :delete, data: { confirm: 'Are you sure?' } if can? :destroy, Quote %></td>

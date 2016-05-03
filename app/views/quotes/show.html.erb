@@ -4,6 +4,14 @@
   <strong>Content:</strong>
   <%= @quote.content %>
 </p>
+<p>
+  <strong>Author:</strong>
+  <%= @quote.author %>
+</p>
+<p>
+  <strong>Tag:</strong>
+  <%= @quote.tag.name if @quote.tag %>
+</p>
 
 <%= link_to 'Edit', edit_quote_path(@quote) %> |
 <%= link_to 'Back', quotes_path %>
