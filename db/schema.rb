@@ -11,7 +11,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160502230120) do
+ActiveRecord::Schema.define(version: 20160509233004) do
+
+  create_table "corrects", force: :cascade do |t|
+    t.string   "word"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "incorrects", force: :cascade do |t|
+    t.string   "word"
+    t.integer  "level"
+    t.integer  "correct_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "incorrects", ["correct_id"], name: "index_incorrects_on_correct_id"
 
   create_table "quotes", force: :cascade do |t|
     t.text     "content"
