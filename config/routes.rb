@@ -1,9 +1,17 @@
 Rails.application.routes.draw do
+  get 'pages/index'
+
+  get 'pages/contact_us'
+
+  get 'pages/profile'
+
+  get 'pages/settings'
+
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   resources :quotes
   devise_for :users
-  root 'quotes#index'
+  root 'pages#index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
