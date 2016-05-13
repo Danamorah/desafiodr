@@ -5,4 +5,10 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password')
+AdminUser.destroy_all
+Tag.destroy_all
+AdminUser.create!(email: 'hein.rodrigo@gmail.com', password: 'password', password_confirmation: 'password')
+AdminUser.create!(email: 'damoraherrera@gmail.com', password: 'password', password_confirmation: 'password')
+
+tags = Tag.create([{name:'Musician'}, {name: 'Athlete'}, {name:'Fictional'}, {name:'Artist'},
+  {name:'Historic'}, {name:'Writer'}])
