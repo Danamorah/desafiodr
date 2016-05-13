@@ -12,6 +12,11 @@ ActiveAdmin.register Quote do
 #   permitted << :other if resource.something?
 #   permitted
 # end
-
+ index do
+   column :id
+   column :content
+   column :author
+   column :tag_id 
+  end
 
 end
