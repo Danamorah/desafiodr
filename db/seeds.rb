@@ -12,3 +12,7 @@ AdminUser.create!(email: 'damoraherrera@gmail.com', password: 'password', passwo
 
 tags = Tag.create([{name:'Musician'}, {name: 'Athlete'}, {name:'Fictional'}, {name:'Artist'},
   {name:'Historic'}, {name:'Writer'}])
+
+#incorrects = []
+#incorrects << Incorrect.create([{word: 'dont', level: 1}, {word: 'luv', level: 1}])
+
