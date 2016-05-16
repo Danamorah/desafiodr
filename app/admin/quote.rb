@@ -17,6 +17,7 @@ ActiveAdmin.register Quote do
    column :content
    column :author
    column :tag_id 
+   actions
   end
 
 end
