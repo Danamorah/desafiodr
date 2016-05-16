@@ -15,7 +15,7 @@ tags = Tag.create([{name:'Musician'}, {name: 'Athlete'}, {name:'Fictional'}, {na
   {name:'Historic'}, {name:'Writer'}])
 
 quotes = Quote.create([
-  {content:"Don't go to the grave with life unused", author: "Bobby Bowden"}, 
+  {content:"Don't go to the grave with life unused", author: "Bobby Bowden", tag: tags[0]}, 
   {content:"it is very easy to love alone", author: "Gertrude Stein"},
   {content:"man, I love being a turtle", author: "Michelangelo"},
   {content:"I shall not die of a cold. I shall die of having lived", author: "Willa Cather"},
