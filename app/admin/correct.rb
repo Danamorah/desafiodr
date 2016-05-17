@@ -14,12 +14,15 @@ ActiveAdmin.register Correct do
 # end
 
  index do
-   column :id
-   column :word
-   column :incorrect do |correct|
-    correct.incorrects.collect(&:word).join(",")
-    end
-    actions
+  column :id
+  column :word
+  column :incorrect do |correct|
+    correct.incorrects.collect(&:word).join(", ")
+   end
+  column :level do |correct|
+    correct.incorrects.collect(&:level).join(", ")
+   end
+  actions
   end
 
  form do |f|
