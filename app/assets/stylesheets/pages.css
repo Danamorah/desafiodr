@@ -2,11 +2,49 @@
  They will automatically be included in application.css.
  You can use Sass (SCSS) here: http://sass-lang.com/ */
 body{
-	background-image: url(../assets/bg1@3x.png);
+	background-image: url('../assets/bg1@3x.png');
+	background-repeat: no-repeat;
+	background-size: cover;
 }
 img{
     max-width: 100%;
 }
+ul{
+	list-style: none;
+}
+a:focus, a:hover{
+	text-decoration: none;
+}
 .teacher{
   margin: 0 auto;
+}
+.nav-toggle{
+    width: 40px;
+    height: 62px;
+    display: inline-block;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url('../assets/menu-new.png');
+    margin-top: 0px;
+    border: none;
+    margin-bottom: 0;
+    background-size: 28px 20px;
+    background-color: inherit;
+}
+.log-in{
+	float: right;
+}
+.log-in a{
+	color: #fff;
+}
+.log-in a:visited{
+	color: #fff;
+}
+.log-in li{
+	background-color: #9169a9;
+	margin: 10px;
+    padding: 10px;
+    text-align: center;
+    float: right;
+    font-size: 16px;
 }
