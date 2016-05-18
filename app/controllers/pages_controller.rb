@@ -1,7 +1,5 @@
 class PagesController < ApplicationController
   def index
-    #aprete play
-    #redirect_to 
   end
 
   def contact_us

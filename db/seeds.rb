@@ -13,6 +13,10 @@ Incorrect.destroy_all
 AdminUser.create!(email: 'hein.rodrigo@gmail.com', password: 'password', password_confirmation: 'password')
 AdminUser.create!(email: 'damoraherrera@gmail.com', password: 'password', password_confirmation: 'password')
 
+juancribot = User.create(username:'juancribot', email:'bot@bot.cl', password:'password')
+test = User.create(username:'test', email:'test@test.cl', password:'password')
+admintest = User.create(username:'admintest', email:'atest@atest.cl', password:'password', role:0)
+
 tags = Tag.create([{name:'Musician'}, {name: 'Athlete'}, {name:'Fictional'}, {name:'Artist'},
   {name:'Historic'}, {name:'Litterateur'}, {name:'Unknown'}])
 
