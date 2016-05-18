@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  get 'gameplay/game_room'
+
+  get 'gameplay/round'
+
+  get 'gameplay/match'
+
   get 'pages/index'
 
   get 'pages/contact_us'
