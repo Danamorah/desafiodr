@@ -6,11 +6,15 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
   
-  validates :name, :lastname, :username, presence:true
+  validates :username, presence:true
   validates :username, uniqueness: true       
   
   enum role:[:admin, :user, :guest]
   
+  def to_s
+    username
+  end
+
   private
   
   def default_role
