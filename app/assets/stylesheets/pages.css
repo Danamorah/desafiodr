@@ -32,20 +32,19 @@ a:focus, a:hover{
     background-size: 28px 20px;
     background-color: inherit;
 }
-.log-in{
-	float: right;
-}
-.log-in a{
+.regular-btn a{
 	color: #fff;
 }
-.log-in a:visited{
+.regular-btn a:visited{
 	color: #fff;
 }
-.log-in li{
+.regular-btn li{
 	background-color: #9169a9;
 	margin: 10px;
     padding: 10px;
     text-align: center;
-    float: right;
     font-size: 16px;
+}
+.login li{
+    float: right;
 }
