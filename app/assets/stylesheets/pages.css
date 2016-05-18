@@ -13,7 +13,8 @@ ul{
 	list-style: none;
 }
 a:focus, a:hover{
-	text-decoration: none;
+	text-decoration: none!important;
+    background-color: transparent!important;
 }
 .teacher{
   margin: 0 auto;
