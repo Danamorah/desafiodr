@@ -1,5 +1,21 @@
+<div class="container">
 <div class="col-sm-6 col-sm-offset-3">
+<p class="notice"><%= notice %></p>
+<p class="alert"><%= alert %></p>
+
+ <%#= link_to 'Salir', destroy_user_session_path, method: :delete  %>
+ <ul class="log-in">
+<% unless user_signed_in? %>
+	<li><%= link_to 'Log in ', new_user_session_path %></li>
+	<li><%= link_to 'Register', new_user_registration_path %></li>
+<% else %>
+	<li><%= link_to current_user.name, edit_user_registration_path %></li>
+	<li><%= link_to 'Log out', destroy_user_session_path, method: :delete %></li>
+<% end %>	
+</ul>
+
     <%= image_tag 'Mrw@3x.png', class:"teacher" %>
     <li><%= link_to 'Play ', gameplay_game_room_path %></li>
+</div>
 </div>
 
