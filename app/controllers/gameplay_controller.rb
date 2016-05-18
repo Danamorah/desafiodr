@@ -1,8 +1,6 @@
 class GameplayController < ApplicationController
   before_action :set_opponent, only:[:round]
 
-
-
   def game_room
     #aprete new game, redirigir a round
   end
