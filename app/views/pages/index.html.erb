@@ -4,7 +4,7 @@
 <p class="alert"><%= alert %></p>
 
  <%#= link_to 'Salir', destroy_user_session_path, method: :delete  %>
- <ul class="log-in">
+ <ul class="regular-btn login">
 <% unless user_signed_in? %>
 	<li><%= link_to 'Log in ', new_user_session_path %></li>
 	<li><%= link_to 'Register', new_user_registration_path %></li>
@@ -15,7 +15,7 @@
 </ul>
 
     <%= image_tag 'Mrw@3x.png', class:"teacher" %>
-    <li><%= link_to 'Play ', gameplay_game_room_path %></li>
+    <li class="regular-btn"><%= link_to 'Play ', gameplay_game_room_path %></li>
 </div>
 </div>
 
