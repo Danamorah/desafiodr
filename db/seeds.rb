@@ -49,7 +49,7 @@ quotes = Quote.create([
   {content:"eighty percent of success is showing up", author: "Woody Allen", tag: tags[3]},
   {content:"the best revenge is massive success", author: "Frank Sinatra", tag: tags[0]},
   {content:"dream big and dare to fail", author: "Norman Vaughan", tag: tags[0]},
-  {content:"i'm a reflection of the community", author: "Tupac Shakur", tag: tags[3]},
+  {content:"i'm a reflection of the community", author: "Tupac Shakur", tag: tags[0]},
   {content:"time spent with cats is never wasted", author: "Sigmund Freud", tag: tags[4]},
   {content:"being number two sucks", author: "Andre Agassi", tag: tags[1]},
   {content:"power comes in response to a need, not a desire", author: "Goku", tag: tags[2]},
@@ -57,6 +57,8 @@ quotes = Quote.create([
   {content:"float like a butterfly, sting like a bee", author: "Muhammad Ali", tag: tags[1]},
   {content:"greatness is the dream of youth realized in old age", author: "Alfred de Vigny", tag: tags[5]},
   {content:"there is no great genius without a mixture of madness", author: "Aristotle", tag: tags[5]},
+  {content:"there is no blue without yellow and without orange", author: "Vincent Van Gogh", tag: tags[3]},
+  {content:"people react to fear, not love. They don't teach tat in Sunday School, but it's true", author: "Leonardo Da Vinci", tag: tags[4]},
   ])
 
 cword1 = Correct.create(word:"don't")
