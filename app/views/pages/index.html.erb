@@ -15,7 +15,9 @@
 </ul>
 
     <%= image_tag 'Mrw@3x.png', class:"teacher" %>
-    <li class="regular-btn"><%= link_to 'Play ', gameplay_game_room_path %></li>
+    <div class="col-sm-4 col-sm-offset-4">
+    <%= link_to image_tag("asdf@3x.png", border: 0), gameplay_game_room_path, class:"play-btn"  %>
+    </div>
 </div>
 </div>
 

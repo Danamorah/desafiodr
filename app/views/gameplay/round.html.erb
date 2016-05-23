@@ -1,6 +1,6 @@
-<h1>Gameplay#round</h1>
-<p>Find me in app/views/gameplay/round.html.erb</p>
 
+<p>Find me in app/views/gameplay/round.html.erb</p>
+<div class="container">
   <tbody>
   	<tr>
   		<td><%= current_user %></td>
@@ -8,6 +8,9 @@
   		<td><%= @opponent %></td>
   	</tr>
   	<tr>
-  		<td><%= link_to 'Next ', gameplay_match_path %></td>
+    <div class="col-sm-4 col-sm-offset-4">
+  		<td><%= link_to image_tag("next_btn@3x.png", border: 0), gameplay_match_path, class:"play-btn"  %></td>
+    </div>  
   	</tr>
   </tbody>
+</div>
