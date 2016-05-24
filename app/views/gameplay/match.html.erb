@@ -6,11 +6,10 @@
 
 	<p><%#= @correct %></p>
 	<p><%#= @quote %></p>
-	<p><%#= @incorrect %></p>
-	<% quote = @incorrect_quote.split(" ") %>
+	<p><%= @incorrect %></p>
 	<p class="quote">
-	<% quote.each do |v| %>
-		<% if v == @incorrect.word %>
+	<% @incorrect_quote.each do |v| %>
+		<% if v === @incorrect.word %>
 			<span data-info="1"><%= v %></span>
 		<% else %>
 	    <span data-info="0"><%= v %></span>
