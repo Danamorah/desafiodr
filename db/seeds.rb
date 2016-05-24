@@ -37,7 +37,7 @@ quotes = Quote.create([
   {content:"a girl should be two things: classy and fabulous", author: "Coco Chanel", tag: tags[3]},
   {content:"a man is great by deeds, not by birth", author: "Chanakya", tag: tags[5]},
   {content:"you must be the change you wish to see in the world", author: "Mahatma Gandhi", tag: tags[4]},
-  {content:"why so serious ?", author: "The Joker", tag: tags[2]},
+  {content:"why so serious?", author: "The Joker", tag: tags[2]},
   {content:"with great power comes great responsibility", author: "Uncle Ben", tag: tags[2]},
   {content:"a physicist is just an atom's way of looking at itself", author: "Niels Bohr", tag: tags[5]},
   {content:"absence, that common cure of love", author: "Lord Byron", tag: tags[5]},
