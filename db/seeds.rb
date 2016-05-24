@@ -58,7 +58,7 @@ quotes = Quote.create([
   {content:"greatness is the dream of youth realized in old age", author: "Alfred de Vigny", tag: tags[5]},
   {content:"there is no great genius without a mixture of madness", author: "Aristotle", tag: tags[5]},
   {content:"there is no blue without yellow and without orange", author: "Vincent Van Gogh", tag: tags[3]},
-  {content:"people react to fear, not love. They don't teach tat in Sunday School, but it's true", author: "Leonardo Da Vinci", tag: tags[4]},
+  {content:"people react to fear, not love. They don't teach that in Sunday School, but it's true", author: "Leonardo Da Vinci", tag: tags[4]},
   ])
 
 cword1 = Correct.create(word:"don't")
