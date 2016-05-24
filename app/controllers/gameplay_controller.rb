@@ -16,7 +16,7 @@ class GameplayController < ApplicationController
     @correct = Correct.all.sample
     @quote = Quote.search_by_word(@correct).sample
     @incorrect = @correct.incorrects.sample
-    @incorrect_quote = @quote.content.gsub(@correct.word, @incorrect.word)
+    @incorrect_quote = @quote.content.gsub(@correct.word, @incorrect.word).split(' ')
     # 
   end
 end
