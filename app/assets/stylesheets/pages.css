@@ -58,3 +58,33 @@ a:focus, a:hover{
     display: inline-block;
     margin: 10px;
 }
+/*== MATCH ==*/
+.bubble-wrapper{
+    position: relative;
+    margin-top: 8%;
+}
+.game-txt{
+    font-family: 'Indie Flower', cursive;
+    position: absolute;
+    top: 120px;
+    text-align: center;
+    left: 0;
+    right: 0;
+    max-width: 450px;
+    margin: 0 auto;
+}
+.game-txt p{
+    font-family: 'Indie Flower', cursive;
+    font-size: 50px;
+    line-height: 60px;
+    display: inline-block;
+}
+.author{
+    color: #6c4890;
+    margin-top: 50px ;
+}
+
+.quote span:hover {
+    color: green;
+    cursor: pointer;
+}

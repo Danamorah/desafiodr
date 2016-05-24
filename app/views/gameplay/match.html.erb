@@ -1,11 +1,24 @@
-<h1>Gameplay#match</h1>
-<p>Find me in app/views/gameplay/match.html.erb</p>
-
 <tbody>
-	<tr>
-		<td><%= @correct %></td>
-		<td><%= @quote %></td>
-		<td><%= @incorrect %></td>
-		<td><%= @incorrect_quote %></td>
-	</tr>
+<div class="col-sm-6 col-sm-offset-3 bubble-wrapper">
+<%= image_tag '08-help2@3x.png', class:"text-bubble" %>
+<div class="game-txt">
+
+		<p><%#= @correct %></p>
+		<p><%#= @quote %></p>
+		<p><%#= @incorrect %></p>
+		<% quote = @incorrect_quote.split(" ") %>
+		<p class="quote">
+		<% quote.each do |v| %>
+			<% if v == @incorrect.word %>
+			<span data-info="1"><%= v %></span>
+			<% else %>
+		    <span data-info="0"><%= v %></span>
+		    <% end %>
+		<% end %>
+		</p>
+		<p class="author"><%= @quote.author %></p>
+	
+</div>	
+</div>
+	
 </tbody>
