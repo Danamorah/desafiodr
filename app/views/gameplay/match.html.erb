@@ -6,7 +6,7 @@
 
 	<p><%#= @correct %></p>
 	<p><%#= @quote %></p>
-	<p><%= @incorrect %></p>
+	<p><%#= @incorrect %></p>
 	<p class="quote">
 	<% @incorrect_quote.each do |v| %>
 		<% if v === @incorrect.word %>
