@@ -7,7 +7,7 @@ body{
 	background-size: cover;
 }
 img{
-    max-width: 100%;
+    width: 100%;
 }
 ul{
 	list-style: none;

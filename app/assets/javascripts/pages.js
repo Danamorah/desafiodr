@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(document).on('page:change', function() {
     $(".nav-toggle").click(function(event){
         $('.log-in').stop().slideToggle();
         return false;        
@@ -6,7 +6,7 @@ $(document).ready(function() {
 
     $('.quote span').on('click', '', function(){
         if ($(this).attr('data-info') === '1') {
-            $(this).attr('contenteditable', 'true').addClass("edit");;
+            $(this).attr('contenteditable', 'true').addClass("edit");
         } else {
             //alert('game over');
         }
