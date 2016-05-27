@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  attempts: 1
+  user_id: 1
+  round_id: 
+
+two:
+  attempts: 1
+  user_id: 1
+  round_id: 

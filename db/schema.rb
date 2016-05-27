@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160510004422) do
+ActiveRecord::Schema.define(version: 20160525231107) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -55,6 +55,13 @@ ActiveRecord::Schema.define(version: 20160510004422) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "games", force: :cascade do |t|
+    t.integer  "player1"
+    t.integer  "player2"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "incorrects", force: :cascade do |t|
     t.string   "word"
     t.integer  "level"
@@ -65,6 +72,16 @@ ActiveRecord::Schema.define(version: 20160510004422) do
 
   add_index "incorrects", ["correct_id"], name: "index_incorrects_on_correct_id", using: :btree
 
+  create_table "matches", force: :cascade do |t|
+    t.integer  "attempts"
+    t.integer  "user_id"
+    t.integer  "round_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "matches", ["round_id"], name: "index_matches_on_round_id", using: :btree
+
   create_table "quotes", force: :cascade do |t|
     t.text     "content"
     t.datetime "created_at", null: false
@@ -74,6 +91,15 @@ ActiveRecord::Schema.define(version: 20160510004422) do
   end
 
   add_index "quotes", ["tag_id"], name: "index_quotes_on_tag_id", using: :btree
+
+  create_table "rounds", force: :cascade do |t|
+    t.integer  "game_id"
+    t.integer  "winner"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "rounds", ["game_id"], name: "index_rounds_on_game_id", using: :btree
 
   create_table "tags", force: :cascade do |t|
     t.string   "name"
@@ -105,5 +131,7 @@ ActiveRecord::Schema.define(version: 20160510004422) do
   add_index "users", ["username"], name: "index_users_on_username", unique: true, using: :btree
 
   add_foreign_key "incorrects", "corrects"
+  add_foreign_key "matches", "rounds"
   add_foreign_key "quotes", "tags"
+  add_foreign_key "rounds", "games"
 end
