@@ -4,17 +4,18 @@ class GameplayController < ApplicationController
   # before_action :set_quote, only:[:match]
   # before_action :set_incorrect, only:[:match]
   def game_room
-    #if game.present?
-      #@game_id = game_id
-      #player2 = @user
-    #else
-      #@game = Game.new
-      #player1 = @user
-    #end
+    if params[:game_id].present? 
+      Game.find(params[:game_id]).present? && Game.player2 == nil
+      player2 = @user
+    else
+      @game = Game.new
+      player1 = @user
+    end
   end
 
   def round
      @opponent = User.all.sample
+     #mostrar player 1 vs player 2
   end
 
   def match
