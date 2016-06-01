@@ -8,6 +8,7 @@ class GameplayController < ApplicationController
 
   def create_room
     @game = Game.create([player1: current_user, status: true])
+    redirect_to gameplay_round_path(game: @game)
   end
 
   def game_room2
