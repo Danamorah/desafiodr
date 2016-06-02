@@ -1,19 +1,10 @@
 <div class="container">
 <div class="row">
-<div class="col-sm-2">
+<div class="col-sm-1 col-xs-3">
 	 <%= image_tag 'sound_on@3x.png', class:"sound-on" %>
 </div>
-<div class="col-sm-2 col-sm-offset-8">
-	 <%= image_tag 'Sicon@3x.png', class:"config" %>
-</div>	
-</div>
-<div class="row">
-<div class="col-sm-6 col-sm-offset-3">
-<!--<p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p> -->
-
- <%#= link_to 'Salir', destroy_user_session_path, method: :delete  %>
- <ul class="regular-btn login">
+<div class="col-sm-3 col-sm-offset-6">
+	 <ul class="regular-btn login">
 <% unless user_signed_in? %>
 	<li><%= link_to 'Log in ', new_user_session_path %></li>
 	<li><%= link_to 'Register', new_user_registration_path %></li>
@@ -22,7 +13,18 @@
 	<li><%= link_to 'Log out', destroy_user_session_path, method: :delete %></li>
 <% end %>	
 </ul>
+</div>
+<div class="col-sm-1 col-xs-3">
+	 <%= image_tag 'Sicon@3x.png', class:"config" %>
+</div>
+	
+</div>
+<div class="row">
+<div class="col-sm-6 col-sm-offset-3">
+<!--<p class="notice"><%= notice %></p>
+<p class="alert"><%= alert %></p> -->
 
+ <%#= link_to 'Salir', destroy_user_session_path, method: :delete  %>
     <%= image_tag 'Mrw@3x.png', class:"teacher" %>
     <div class="col-sm-4 col-sm-offset-4">
     <%= link_to image_tag("asdf@3x.png", border: 0), gameplay_index_path, class:"play-btn"  %>
@@ -30,11 +32,11 @@
 </div>
 </div>
 <div class="row">
-<div class="col-sm-2"> 
+<div class="col-sm-1 col-xs-3"> 
 	 <%= image_tag 'Micon@3x.png', class:"contact" %>
 </div>
-<div class="col-sm-2 col-sm-offset-8">
-	<%= image_tag 'Vicon@3x.png', class:"config" %>
+<div class="col-sm-1 col-xs-3 col-sm-offset-10 col-xs-offset-6">
+	<%= image_tag 'Vicon@3x.png', class:"user" %>
 </div>
 </div>
 </div>

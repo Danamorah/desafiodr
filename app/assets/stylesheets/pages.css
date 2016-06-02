@@ -16,6 +16,9 @@ a:focus, a:hover{
 	text-decoration: none!important;
     background-color: transparent!important;
 }
+.sound-on, .config, .contact, .user{
+    cursor: pointer;
+}
 .teacher{
   margin: 0 auto;
 }
