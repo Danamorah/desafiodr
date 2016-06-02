@@ -15,15 +15,15 @@ class GameplayController < ApplicationController
   def create
     #Game.find(params[:game_id]).present?
     games = Game.where(status: true)
-      
+
     if games.any?
       games.each do |game|
         next if game.player1 == current_user
         game.player2 = current_user
         game.status = false
-        break if game.save
+        break game if game.save
       end
-      game = Game.create([player1: current_user, status: true])
+      game = Game.create([player1: current_user, status: true]) unless game
     else
       game = Game.create([player1: current_user, status: true])
     end
