@@ -4,16 +4,28 @@ class GameplayController < ApplicationController
   # before_action :set_quote, only:[:match]
   # before_action :set_incorrect, only:[:match]
   def game_room
-    if params[:game_id].present? 
-      Game.find(params[:game_id]).present? && Game.player2 == nil
-      player2 = @user
-    else
-      @game = Game.new
-      player1 = @user
-    end
+  end
+
+  def create_room
+    @game = Game.create([player1: current_user, status: true])
+    redirect_to gameplay_round_path(game: @game)
+  end
+
+  def game_room2
+    #Game.find(params[:game_id]).present?
+    games = Game.where(status: true)
+      if games.any?
+        @game = games.first
+        @game.player2 = current_user
+        @game.status = false
+      end
+     redirect_to gameplay_round_path(game: @game)
   end
 
   def round
+    if params[:game].present?
+      @game = Game.find(params[:game])
+    end
      @opponent = User.all.sample
      #mostrar player 1 vs player 2
   end
@@ -26,4 +38,13 @@ class GameplayController < ApplicationController
     @incorrect = @correct.incorrects.sample
     @incorrect_quote = @quote.content.gsub(@correct.word, @incorrect.word).split(' ')
   end
+
+  private
+
+  def player2_empty?
+    @game.player2 = nil
+    @game.status = true
+  end
+
 end
+#&& Game.find(params[:player2]) == nil
