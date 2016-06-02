@@ -3,12 +3,20 @@
 <div class="container">
   <tbody>
   	<tr>
+    <div class="col-sm-3 col-sm-offset-2 col-xs-4">
+    <%= image_tag 'player1.png', class:"config" %>
   		<td><%= current_user %></td>
+    </div>
+    <div class="col-sm-2"> 
   		<td>VS</td>
+     </div>  
+      <div class="col-sm-3 col-xs-4">
+      <%= image_tag 'player2.png', class:"config" %>
   		<td><%= @opponent %></td>
+      </div>
   	</tr>
   	<tr>
-    <div class="col-sm-4 col-sm-offset-4">
+    <div class="col-sm-1 col-sm-offset-5">
   		<td><%= link_to image_tag("next_btn@3x.png", border: 0), gameplay_match_path, class:"play-btn"  %></td>
     </div>  
   	</tr>
