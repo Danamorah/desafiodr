@@ -3,23 +3,32 @@ class GameplayController < ApplicationController
   # before_action :set_correct, only:[:match]
   # before_action :set_quote, only:[:match]
   # before_action :set_incorrect, only:[:match]
-  def game_room
+
+#  def create_room
+#    @game = Game.create([player1: current_user, status: true])
+#    redirect_to gameplay_round_path(game: @game)
+#  end
+
+  def index
   end
 
-  def create_room
-    @game = Game.create([player1: current_user, status: true])
-    redirect_to gameplay_round_path(game: @game)
-  end
-
-  def game_room2
+  def create
     #Game.find(params[:game_id]).present?
     games = Game.where(status: true)
-      if games.any?
-        @game = games.first
-        @game.player2 = current_user
-        @game.status = false
+      
+    if games.any?
+      games.each do |game|
+        next if game.player1 == current_user
+        game.player2 = current_user
+        game.status = false
+        break if game.save
       end
-     redirect_to gameplay_round_path(game: @game)
+      game = Game.create([player1: current_user, status: true])
+    else
+      game = Game.create([player1: current_user, status: true])
+    end
+
+    redirect_to gameplay_round_path(game: game)
   end
 
   def round

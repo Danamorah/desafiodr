@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  get 'gameplay/game_room'
+  get 'gameplay/index'
+
+  get 'gameplay/create'
 
   get 'gameplay/round'
 

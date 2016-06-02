@@ -63,11 +63,6 @@ ActiveRecord::Schema.define(version: 20160601001149) do
     t.boolean  "status"
   end
 
-  create_table "games_users", id: false, force: :cascade do |t|
-    t.integer "game_id", null: false
-    t.integer "user_id", null: false
-  end
-
   create_table "incorrects", force: :cascade do |t|
     t.string   "word"
     t.integer  "level"
