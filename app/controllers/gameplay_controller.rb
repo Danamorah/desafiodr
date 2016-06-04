@@ -13,17 +13,10 @@ class GameplayController < ApplicationController
   end
 
   def create
-    #Game.find(params[:game_id]).present?
-    games = Game.where(status: true)
+    games = Game.open_games
 
     if games.any?
-      games.each do |game|
-        next if game.player1 == current_user
-        game.player2 = current_user
-        game.status = false
-        break game if game.save
-      end
-      game = Game.create([player1: current_user, status: true]) unless game
+      game = Game.pair_game?(games, current_user)
     else
       game = Game.create([player1: current_user, status: true])
     end
@@ -48,12 +41,4 @@ class GameplayController < ApplicationController
     @incorrect_quote = @quote.content.gsub(@correct.word, @incorrect.word).split(' ')
   end
 
-  private
-
-  def player2_empty?
-    @game.player2 = nil
-    @game.status = true
-  end
-
 end
-#&& Game.find(params[:player2]) == nil
