@@ -4,8 +4,8 @@ class Correct < ActiveRecord::Base
   include PgSearch
 
 
-def to_s
-  "#{word}"
-end
+  def to_s
+    "#{word}"
+  end
 
 end

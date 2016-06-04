@@ -1,12 +1,10 @@
 
-<p>Find me in app/views/gameplay/round.html.erb</p>
 <div class="container">
   <tbody>
   	<tr>
       <div class="col-sm-3 col-sm-offset-2 col-xs-4">
         <%= image_tag 'player1.png', class:"config" %>
   		  <td><%= @game.player1 %></td>
-        <!--current_user-->
       </div>
       <div class="col-sm-2"> 
   		  <td>VS</td>
@@ -16,10 +14,11 @@
             <%= image_tag 'player2.png', class:"config" %>
   	        <td><%= @game.player2 %></td>
           </div>
-          <% else %>
-            <div class="col-sm-3 col-xs-4">
+        <% else %>
+          <div class="col-sm-3 col-xs-4">
             <%= image_tag 'random.png', class:"config" %>
-          <td><%= @opponent %></td>
+            <td><%= @opponent %></td>
+          </div>
         <% end %>
   	</tr>
   	<tr>
