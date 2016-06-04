@@ -21,15 +21,13 @@ class GameplayController < ApplicationController
       game = Game.create([player1: current_user, status: true])
     end
 
-    redirect_to gameplay_round_path(game: game)
+    redirect_to gameplay_round_path(game)
   end
 
   def round
-    if params[:game].present?
-      @game = Game.find(params[:game])
-    end
-     @opponent = User.all.sample
-     #mostrar player 1 vs player 2
+    @game = Game.find(params[:id])
+    @opponent = User.first
+    #user.first es el not defined
   end
 
   def match

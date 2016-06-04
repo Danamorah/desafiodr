@@ -3,7 +3,7 @@ Rails.application.routes.draw do
 
   get 'gameplay/create'
 
-  get 'gameplay/round'
+  get 'gameplay/round/:id' => 'gameplay#round', as: 'gameplay_round'
 
   get 'gameplay/match'
 
