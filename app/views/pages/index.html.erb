@@ -1,43 +1,41 @@
 <div class="container">
-<div class="row">
-<div class="col-sm-1 col-xs-3">
-	 <%= image_tag 'sound_on@3x.png', class:"sound-on" %>
+	<div class="row">
+		<div class="col-sm-1 col-xs-3">
+	 		<%= image_tag 'sound_on@3x.png', class:"sound-on" %>
+		</div>
+	<div class="col-sm-3 col-sm-offset-6">
+		<ul class="regular-btn login">
+			<% unless user_signed_in? %>
+			<li><%= link_to 'Log in ', new_user_session_path %></li>
+			<li><%= link_to 'Register', new_user_registration_path %></li>
+			<% else %>
+			<li><%= link_to current_user.name, edit_user_registration_path %></li>
+			<li><%= link_to 'Log out', destroy_user_session_path, method: :delete %></li>
+			<% end %>	
+		</ul>
+	</div>
+	<div class="col-sm-1 col-xs-3">
+		<%= link_to image_tag("Sicon@3x.png"), pages_settings_path, class:"config" %>
+	</div>
 </div>
-<div class="col-sm-3 col-sm-offset-6">
-	 <ul class="regular-btn login">
-<% unless user_signed_in? %>
-	<li><%= link_to 'Log in ', new_user_session_path %></li>
-	<li><%= link_to 'Register', new_user_registration_path %></li>
-<% else %>
-	<li><%= link_to current_user.name, edit_user_registration_path %></li>
-	<li><%= link_to 'Log out', destroy_user_session_path, method: :delete %></li>
-<% end %>	
-</ul>
-</div>
-<div class="col-sm-1 col-xs-3">
-	 <%= image_tag 'Sicon@3x.png', class:"config" %>
-</div>
-	
-</div>
-<div class="row">
-<div class="col-sm-6 col-sm-offset-3">
-<!--<p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p> -->
+	<div class="row">
+		<div class="col-sm-6 col-sm-offset-3">
+		<!--<p class="notice"><%= notice %></p>
+		<p class="alert"><%= alert %></p> -->
 
- <%#= link_to 'Salir', destroy_user_session_path, method: :delete  %>
-    <%= image_tag 'Mrw@3x.png', class:"teacher" %>
-    <div class="col-sm-4 col-sm-offset-4">
-    <%= link_to image_tag("asdf@3x.png", border: 0), gameplay_index_path, class:"play-btn"  %>
-    </div>
+		<%#= link_to 'Salir', destroy_user_session_path, method: :delete  %>
+    	<%= image_tag 'Mrw@3x.png', class:"teacher" %>
+    		<div class="col-sm-4 col-sm-offset-4">
+    			<%= link_to image_tag("asdf@3x.png", border: 0), gameplay_index_path, class:"play-btn"  %>
+	    	</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-sm-1 col-xs-3"> 
+				<%= link_to image_tag("Micon@3x.png"), pages_contact_us_path, class:"contact" %>
+		</div>
+		<div class="col-sm-1 col-xs-3 col-sm-offset-10 col-xs-offset-6">
+			<%= link_to image_tag("Vicon@3x.png"), pages_profile_path, class:"user" %>
+		</div>
+	</div>
 </div>
-</div>
-<div class="row">
-<div class="col-sm-1 col-xs-3"> 
-	 <%= image_tag 'Micon@3x.png', class:"contact" %>
-</div>
-<div class="col-sm-1 col-xs-3 col-sm-offset-10 col-xs-offset-6">
-	<%= image_tag 'Vicon@3x.png', class:"user" %>
-</div>
-</div>
-</div>
-
