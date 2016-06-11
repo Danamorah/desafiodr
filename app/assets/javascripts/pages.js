@@ -29,12 +29,11 @@ $(document).on('page:change', function() {
     }
 });*/
    
-   $(".edit").keypress(function(event) {
-    if (event.which == 13) {
+   $(".quote").keypress(function(event) {
+    if (event.keyCode == 13){
         event.preventDefault();
-        $("form").submit();
+        $(".quote").submit();
     }
-
 });
 
 });

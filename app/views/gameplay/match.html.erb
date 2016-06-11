@@ -2,7 +2,7 @@
 
 <div class="col-sm-6 col-sm-offset-3 bubble-wrapper">
 <%= image_tag '08-help2@3x.png', class:"text-bubble" %>
-<div class="game-txt">
+<div class="game-txt" input type="submit">
 
 	<p><%#= @correct %></p>
 	<p><%#= @quote %></p>
@@ -18,7 +18,33 @@
 	</p>
 	<p class="author"><%= @quote.author %></p>
 	</div>
-	<button class="send_quote">enviar</button>
+	<!--<button class="send_quote">enviar</button>-->
 </div>
 	
 </tbody>
+
+<script type="text/javascript">
+
+	var attempts = 0;
+	
+	$("span").on('click', function(){
+		selected_word = $(this).val();
+		confirmation = window.prompt("Are you sure?");
+		if (confirmation == "yes"){
+			attempts += 1;
+			if (selected_word == "<%= @incorrect.word %>")
+				alert("That's correct! Well done!");
+				redirect_to gameplay_round_path;
+			else if (selected_word == "<%= @correct.word %>")
+				alert("That's incorrect, please try again");
+		}
+	});
+
+	$(document).ready(function(){
+		time = 0;
+		setInterval(function(){
+			time += 1
+		}, 1000)
+	});
+
+</script>
