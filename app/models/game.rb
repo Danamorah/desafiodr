@@ -5,6 +5,32 @@ class Game < ActiveRecord::Base
 
   scope :open_games, -> {where(status: true)}
 
+  def new_round
+    #if last_round.nil?
+    if self.rounds.empty? 
+      round = rounds.build(number: 1)
+    elsif self.rounds.count == 2
+     return false
+    else
+      round = rounds.build(number: 2)
+    end
+    round.save
+    round
+  end
+
+  def last_round
+    last_round = self.rounds.last
+    #last_round.number unless last_round.nil?
+  end
+
+  def check_game_slot (game)
+    self.game.present?
+  end
+
+  def last_game
+    last_game = self.game(:id)
+  end
+
   private
 
   def self.pair_game?(games, user)
@@ -17,5 +43,6 @@ class Game < ActiveRecord::Base
     end
     game = Game.create([player1: user, status: true])
   end
+
 
 end

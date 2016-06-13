@@ -5,6 +5,7 @@ class GameplayController < ApplicationController
   # before_action :set_incorrect, only:[:match]
   # before_action :click, only: :match
   # before_save :click, only: :match
+  # before_action :adding_counter, only:[:round]
 
 #  def create_room
 #    @game = Game.create([player1: current_user, status: true])
@@ -12,6 +13,10 @@ class GameplayController < ApplicationController
 #  end
 
   def index
+    #@game = @game.check_game_slot
+    #@game = current_user.games
+    game_slot = Game.open_games
+
   end
 
   def create
@@ -29,7 +34,19 @@ class GameplayController < ApplicationController
   def round
     @game = Game.find(params[:id])
     @opponent = User.first
+    @round = @game.new_round
+
+    unless @round
+      redirect_to gameplay_index_path 
+    end
+    #@number = Number.all
     #user.first es unknown
+    #respond_to do |r|
+    #  if number > 2
+    #    r.html { redirect_to gameplay_index_path, notice: "Waiting for opponent's turn" }
+    #  end
+    #end
+
   end
 
   def match
@@ -46,6 +63,10 @@ class GameplayController < ApplicationController
 
 #  def click
 #    Match.attempt.create
+#  end
+
+#  def adding_counter
+#    number.increment!
 #  end
 
 end
