@@ -5,17 +5,16 @@ class Game < ActiveRecord::Base
 
   scope :open_games, -> {where(status: true)}
 
-  def new_round
-    #if last_round.nil?
-    if self.rounds.empty? 
-      round = rounds.build(number: 1)
-    elsif self.rounds.count == 2
-     return false
+  def set_round user
+    if self.rounds.empty?
+      return round = self.rounds.create(number: 1)
+    elsif self.rounds.first.player2.nil? && self.rounds.first.player1 != user
+      return round = self.round.first
+    elsif self.rounds.last.winner? && self.rounds.count == 2
+      return false
     else
-      round = rounds.build(number: 2)
+      return round = self.rounds.create(number: 2)
     end
-    round.save
-    round
   end
 
   def last_round

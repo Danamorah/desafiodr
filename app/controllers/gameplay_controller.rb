@@ -16,7 +16,6 @@ class GameplayController < ApplicationController
     #@game = @game.check_game_slot
     #@game = current_user.games
     game_slot = Game.open_games
-
   end
 
   def create
@@ -34,7 +33,7 @@ class GameplayController < ApplicationController
   def round
     @game = Game.find(params[:id])
     @opponent = User.first
-    @round = @game.new_round
+    @round = @game.set_round current_user
 
     unless @round
       redirect_to gameplay_index_path 
