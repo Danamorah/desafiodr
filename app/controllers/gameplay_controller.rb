@@ -15,7 +15,7 @@ class GameplayController < ApplicationController
   def index
     #@game = @game.check_game_slot
     #@game = current_user.games
-    game_slot = Game.open_games
+    #game_slot = Game.open_games
   end
 
   def create
@@ -56,6 +56,12 @@ class GameplayController < ApplicationController
     @incorrect = @correct.incorrects.sample
     @incorrect_quote = @quote.content.gsub(@correct.word, @incorrect.word).split(' ')
     #@clicks = Click.sum
+  end
+
+  def round_winner
+    @winner = Round.winner
+    if Round1.present?
+      if player1.attempt < 
   end
 
   private

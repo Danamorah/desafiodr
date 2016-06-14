@@ -8,6 +8,15 @@ class Game < ActiveRecord::Base
   def set_round user
     if self.rounds.empty?
       return round = self.rounds.create(number: 1)
+    #elsif self.rounds.count == 1 && self.rounds.first.player1 == user
+      #return round = self.rounds.create(number: 2)
+    #elsif self.rounds.count <= 2 && self.rounds.first.player1 != user
+      #return round = self.round.first
+    #elsif self.rounds.count === 2
+      #return round = self.round.second
+    #else 
+      #return false
+      
     elsif self.rounds.first.player2.nil? && self.rounds.first.player1 != user
       return round = self.round.first
     elsif self.rounds.last.winner? && self.rounds.count == 2
