@@ -8,6 +8,10 @@ class Game < ActiveRecord::Base
   def set_round user
     if self.rounds.empty?
       return round = self.rounds.create(number: 1)
+    elsif self.rounds.count == 1
+      return round = self.rounds.first
+    else
+      return false
     #elsif self.rounds.count == 1 && self.rounds.first.player1 == user
       #return round = self.rounds.create(number: 2)
     #elsif self.rounds.count <= 2 && self.rounds.first.player1 != user
@@ -17,12 +21,12 @@ class Game < ActiveRecord::Base
     #else 
       #return false
 
-    elsif self.rounds.first.player2.nil? && self.rounds.first.player1 != user
-      return round = self.round.first
-    elsif self.rounds.last.winner? && self.rounds.count == 2
-      return false
-    else
-      return round = self.rounds.create(number: 2)
+    #elsif self.rounds.first.player2.nil? && self.rounds.first.player1 != user
+    #  return round = self.round.first
+    #elsif self.rounds.last.winner? && self.rounds.count == 2
+    #  return false
+    #else
+    #  return round = self.rounds.create(number: 2)
     end
   end
 
@@ -39,16 +43,16 @@ class Game < ActiveRecord::Base
     last_game = self.game(:id)
   end
 
-  def round_winner
-    @winner = Round.winner
-    if Round.count.present?
-      if player1.attempts < player2.attempts
-        winner = Round.number(1).player1
-      else
-        winner = Round.number(1).player2
-      end
-    end
-  end
+#  def round_winner
+#    @winner = Round.winner
+#    if Round.present? && self.rounds.first.player1 != user
+#      if player1.attempts < player2.attempts
+#        winner = Round.number(1).player1
+#      else
+#        winner = Round.number(1).player2
+#      end
+#    end
+#  end
 
   private
 
