@@ -6,7 +6,7 @@ class GameplayController < ApplicationController
   # before_action :click, only: :match
   # before_save :click, only: :match
   # before_action :adding_counter, only:[:round]
-  # after_save :round_winner, only:[:match]
+  # before_save :round_winner, only:[:match]
 
 #  def create_room
 #    @game = Game.create([player1: current_user, status: true])

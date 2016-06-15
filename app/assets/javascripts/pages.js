@@ -32,7 +32,7 @@ $(document).on('page:change', function() {
    $(".quote").keypress(function(event) {
     if (event.keyCode == 13){
         event.preventDefault();
-        $(".quote").submit();
+         this.(".quote").submit;
     }
 });
 
