@@ -16,7 +16,7 @@ class Game < ActiveRecord::Base
       #return round = self.round.second
     #else 
       #return false
-      
+
     elsif self.rounds.first.player2.nil? && self.rounds.first.player1 != user
       return round = self.round.first
     elsif self.rounds.last.winner? && self.rounds.count == 2
@@ -37,6 +37,17 @@ class Game < ActiveRecord::Base
 
   def last_game
     last_game = self.game(:id)
+  end
+
+  def round_winner
+    @winner = Round.winner
+    if Round.count.present?
+      if player1.attempts < player2.attempts
+        winner = Round.number(1).player1
+      else
+        winner = Round.number(1).player2
+      end
+    end
   end
 
   private

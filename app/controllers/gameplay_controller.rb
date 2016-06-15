@@ -58,11 +58,7 @@ class GameplayController < ApplicationController
     #@clicks = Click.sum
   end
 
-  def round_winner
-    @winner = Round.winner
-    if Round1.present?
-      if player1.attempt < 
-  end
+
 
   private
 
