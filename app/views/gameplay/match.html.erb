@@ -20,23 +20,25 @@
 	</div>
 	<!--<button class="send_quote">enviar</button>-->
 </div>
-	
+
 </tbody>
 
 <script type="text/javascript">
 
-	var attempts = 0;
-	
+
 	$("span").on('click', function(){
-		selected_word = $(this).val();
+		var attempts = 0;
+		var selected_word = $(this).text();
 		confirmation = window.prompt("Are you sure?");
-		if (confirmation == "yes"){
+		if (confirmation === "yes") {
 			attempts += 1;
-			if (selected_word == "<%= @incorrect.word %>")
+			if (selected_word === "<%= @incorrect.word %>") {
 				alert("That's correct! Well done!");
-				redirect_to gameplay_round_path;
-			else if (selected_word == "<%= @correct.word %>")
+				location = "<%= gameplay_index_path %>";
+			}
+			else {
 				alert("That's incorrect, please try again");
+			}
 		}
 	});
 
