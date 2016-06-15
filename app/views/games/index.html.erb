@@ -1,0 +1,29 @@
+<div class="container">
+
+	<% if @games.any? %>
+		<% @games.each do |game| %>
+			<div class="row">
+				<div class="col-sm-4 col-sm-offset-4">
+					<%= link_to 'Continuar Juego', game_rounds_path(game), class:"newgame-btn" %>
+				</div>
+			</div>
+		<% end %>
+	<% end %>
+
+	<% if @games.empty? || @games.count < 5 %>
+		<div class="row">
+			<div class="col-sm-4 col-sm-offset-4">
+				<%= link_to image_tag("play_screen_bt1@3x.png", border: 0), games_path, method: :post, class:"newgame-btn" %>
+			</div>
+		</div>
+	<% end %>
+
+
+
+		<%# if game_slot.present? %>
+    	    <%#= image_tag 'play_screen_bt0@3x.png' %>
+        <%# else %>
+            <%#= link_to image_tag("play_screen_bt1@3x.png", border: 0), games_path, method: :post, class:"newgame-btn"  %>
+        <%# end %>
+	</div>
+</div>

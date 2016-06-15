@@ -1,5 +1,6 @@
 class Match < ActiveRecord::Base
   belongs_to :round
+  belongs_to :user
 
 #  def self.sum
 #    $redis.get "count"

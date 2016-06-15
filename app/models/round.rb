@@ -4,6 +4,9 @@ class Round < ActiveRecord::Base
   has_one :player1, through: :game
   has_one :player2, through: :game
 
-# round 1 y round 2
-  
+  def check_match? user
+    return false if self.matches.empty?
+    return true if self.matches.last.user == user
+  end
+
 end

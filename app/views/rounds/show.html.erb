@@ -2,9 +2,11 @@
   <tr>
     <td>Round</td>
     <td><%= @round.number %></td>
+    <td>Matches</td>
+    <td><%= @matches.count %></td>
   </tr>
 </div>
-  
+
   </div>
   <div class="container">
     <tbody>
@@ -13,7 +15,7 @@
           <%= image_tag 'player1.png', class:"config" %>
     		  <td><%= @game.player1 %></td>
         </div>
-        <div class="col-sm-2"> 
+        <div class="col-sm-2">
     		  <td>VS</td>
         </div>
           <% if @game.player2 %>
@@ -30,8 +32,8 @@
     	</tr>
     	<tr>
         <div class="col-sm-1 col-sm-offset-5">
-    		  <td><%= link_to image_tag("next_btn@3x.png", border: 0), gameplay_match_path, class:"play-btn"  %></td>
-        </div>  
+    		  <td><%= link_to image_tag("next_btn@3x.png", border: 0), game_round_matches_path(@game, @round), class:"play-btn"  %></td>
+        </div>
     	</tr>
     </tbody>
   </div>

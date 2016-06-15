@@ -1,45 +1,9 @@
 class Game < ActiveRecord::Base
-  has_many :rounds
+  has_many :rounds, dependent: :destroy
   belongs_to :player1, :class_name => "User", :foreign_key => "player1"
   belongs_to :player2, :class_name => "User", :foreign_key => "player2"
 
   scope :open_games, -> {where(status: true)}
-
-  def set_round user
-    if self.rounds.empty?
-      return round = self.rounds.create(number: 1)
-    #elsif self.rounds.count == 1 && self.rounds.first.player1 == user
-      #return round = self.rounds.create(number: 2)
-    #elsif self.rounds.count <= 2 && self.rounds.first.player1 != user
-      #return round = self.round.first
-    #elsif self.rounds.count === 2
-      #return round = self.round.second
-    #else 
-      #return false
-      
-    elsif self.rounds.first.player2.nil? && self.rounds.first.player1 != user
-      return round = self.round.first
-    elsif self.rounds.last.winner? && self.rounds.count == 2
-      return false
-    else
-      return round = self.rounds.create(number: 2)
-    end
-  end
-
-  def last_round
-    last_round = self.rounds.last
-    #last_round.number unless last_round.nil?
-  end
-
-  def check_game_slot (game)
-    self.game.present?
-  end
-
-  def last_game
-    last_game = self.game(:id)
-  end
-
-  private
 
   def self.pair_game?(games, user)
     game = false
@@ -52,5 +16,10 @@ class Game < ActiveRecord::Base
     game = Game.create([player1: user, status: true])
   end
 
+  def check_round
+    return 0 if self.rounds.empty?
+    return 1 if self.rounds.last.number == 1
+    return 2 if self.rounds.last.number == 2
+  end
 
 end
