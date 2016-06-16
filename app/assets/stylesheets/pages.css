@@ -42,11 +42,7 @@ a:focus, a:hover{
 	color: #fff;
 }
 .regular-btn li{
-	background-color: #9169a9;
-	margin: 10px;
-    padding: 10px;
-    text-align: center;
-    font-size: 16px;
+	margin-top: 10px;
 }
 .play-btn{
 
@@ -61,6 +57,21 @@ a:focus, a:hover{
     display: inline-block;
     margin: 10px;
 }
+/*== ROUND ==*/
+.round-title p{
+    font-size: 40px;
+    text-align: center;
+    margin: 50px;
+}
+.vs p{
+   font-size: 40px;
+   text-align: center; 
+}
+.p-2{
+    text-align: center;
+}
+
+
 /*== MATCH ==*/
 .bubble-wrapper{
     position: relative;
@@ -69,7 +80,7 @@ a:focus, a:hover{
 .game-txt{
     font-family: 'Indie Flower', cursive;
     position: absolute;
-    top: 120px;
+    top: 15%;
     text-align: center;
     left: 0;
     right: 0;

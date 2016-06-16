@@ -1,21 +1,20 @@
-<div>
-  <tr>
-    <td>Round</td>
-    <td><%= @round.number %></td>
-  </tr>
-</div>
-  
-  </div>
-  <div class="container">
+
+ <div class="container">
+  <div class="round-title">
+    <p>Round <%= @round.number %></p>
+   </div> 
     <tbody>
     	<tr>
+      <div class="row">
         <div class="col-sm-3 col-sm-offset-2 col-xs-4">
           <%= image_tag 'player1.png', class:"config" %>
     		  <td><%= @game.player1 %></td>
         </div>
-        <div class="col-sm-2"> 
-    		  <td>VS</td>
+
+        <div class="col-sm-2 col-xs-4 vs"> 
+    		  <p>VS</p>
         </div>
+
           <% if @game.player2 %>
             <div class="col-sm-3 col-xs-4">
               <%= image_tag 'player2.png', class:"config" %>
@@ -24,12 +23,13 @@
           <% else %>
             <div class="col-sm-3 col-xs-4">
               <%= image_tag 'random.png', class:"config" %>
-              <td><%= @opponent %></td>
+              <p class="p-2"><%= @opponent %></p>
             </div>
           <% end %>
+        </div>
     	</tr>
     	<tr>
-        <div class="col-sm-1 col-sm-offset-5">
+        <div class="col-sm-2 col-xs-4 col-sm-offset-5 col-xs-offset-4">
     		  <td><%= link_to image_tag("next_btn@3x.png", border: 0), gameplay_match_path, class:"play-btn"  %></td>
         </div>  
     	</tr>
